@@ -1,129 +1,136 @@
-# 🧮 Index Calculus on Elliptic Curves
+# 🧮 ECDLP Research Suite
 
-## A Comprehensive Research Suite for the Elliptic Curve Discrete Logarithm Problem (ECDLP)
-
----
-
-## 🔍 Overview
-
-This repository documents a comprehensive research project exploring algebraic, statistical, spectral, and structural approaches to the **Elliptic Curve Discrete Logarithm Problem (ECDLP)**.
-
-The work began as an investigation of multiple unconventional attack vectors against Bitcoin Puzzle keys and evolved into a complete experimental framework for testing ECDLP hypotheses on elliptic curves.
-
-The project includes:
-
-* A fully working **Index Calculus implementation for elliptic curves**
-* Large-scale testing of algebraic reduction techniques
-* Spectral and statistical analysis of Bitcoin Puzzle datasets
-* Investigation of recurrence structures, smoothness biases, and hidden correlations
-* Experimental validation and falsification of multiple ECDLP hypotheses
-
-All experiments were implemented from scratch in pure Python and verified against known discrete logarithm instances.
+## Index Calculus, Spectral Analysis, and Structural Cryptanalysis of Elliptic Curves
 
 ---
 
-# 🎯 Research Goals
+# 🔍 Overview
 
-The primary objective of this research was to answer a simple question:
+This repository contains a comprehensive research framework for studying the **Elliptic Curve Discrete Logarithm Problem (ECDLP)** through algebraic, spectral, statistical, and structural approaches.
 
-> Can hidden algebraic, spectral, statistical, or structural properties of elliptic curve groups be exploited to solve ECDLP significantly faster than generic attacks?
+The project began as an exploration of unconventional attack vectors against Bitcoin Puzzle instances and evolved into a large-scale experimental environment for validating and falsifying ECDLP hypotheses.
 
-To investigate this, multiple independent research directions were pursued and rigorously tested.
+The repository includes:
+
+* A complete Index Calculus implementation for elliptic curves
+* Spectral analysis of elliptic curve groups
+* Statistical cryptanalysis of Bitcoin Puzzle datasets
+* Structural investigations of key distributions
+* Automated hypothesis testing framework
+* Experimental benchmarks and reproducible research results
+
+All components were implemented from scratch in pure Python.
 
 ---
 
-# ✨ Key Features
+# 🎯 Research Objectives
 
-### ✅ Fully Working Index Calculus for Elliptic Curves
+The primary goal of this project is to investigate whether hidden algebraic or geometric structures inside elliptic curve groups can provide shortcuts for solving ECDLP.
+
+Research questions explored include:
+
+* Can ECDLP be transformed into a simpler algebraic problem?
+* Do Bitcoin Puzzle keys exhibit detectable structure?
+* Can spectral methods reveal hidden information about scalar multiplication?
+* Are there exploitable biases in public-key distributions?
+* Can Index Calculus be adapted to elliptic curves in a practical way?
+
+---
+
+# ✨ Features
+
+## ✅ Complete Index Calculus Framework
+
+Implemented entirely in Python:
 
 * Factor base construction
 * Relation generation
-* Smoothness detection
-* Linear system construction
-* CRT-based solving
-* Native elliptic curve arithmetic
+* Smoothness testing
+* Modular linear algebra
+* CRT decomposition
+* Discrete logarithm recovery
 
-### ✅ Spectral Analysis Framework
+## ✅ Spectral Analysis Toolkit
 
-Investigation of:
+Research modules for:
 
-* Eigenvalue distributions
 * Spectral continuity
-* Laplacian operators
-* Random-walk dynamics
-* Graph representations of ECC groups
+* Eigenvalue distributions
+* Graph Laplacians
+* Random walk dynamics
+* Spectral embeddings
 
-### ✅ Statistical Cryptanalysis
+## ✅ Statistical Cryptanalysis
 
 Analysis of:
 
-* Bitcoin Puzzle keys
-* Hamming weight distributions
+* Bitcoin Puzzle datasets
+* Hamming-weight distributions
 * wNAF representations
 * Entropy measurements
 * Correlation structures
-* Linear complexity metrics
+* Linear complexity
 
-### ✅ Hypothesis Testing Engine
+## ✅ Hypothesis Validation Framework
 
-Automated framework for validating or falsifying ECDLP attack ideas.
+Automated testing environment for evaluating potential ECDLP attack strategies.
 
-### ✅ Pure Python
+## ✅ Pure Python Implementation
 
 No external cryptographic libraries required.
 
-### ✅ Reproducible Research
+## ✅ Fully Reproducible Research
 
-Every result is generated from source code contained in this repository.
+All published results can be regenerated from repository code.
 
 ---
 
-# 🧠 Tested Research Hypotheses
+# 🧠 Investigated Hypotheses
 
-The following hypotheses were investigated through theoretical analysis and practical experimentation.
+The following hypotheses were studied experimentally.
 
-| Hypothesis                        | Result                                                           | Status              |
-| --------------------------------- | ---------------------------------------------------------------- | ------------------- |
-| Echo-Polynomial Reduction         | No exploitable recursive structure found                         | ❌ Closed            |
-| Isogeny Walk Reduction            | Neighbor curves preserve hard DLP structure                      | ❌ Closed            |
-| LFSR / Linear Recurrence Model    | Keys exhibit CSPRNG behavior                                     | ❌ Closed            |
-| Coppersmith Small Root Reduction  | Degree growth becomes prohibitive                                | ❌ Closed            |
-| Spectral Continuity of ECDLP      | Observable continuity exists but no key recovery mechanism found | ✅ Verified Property |
-| Graph-Theoretic ECC Structures    | Interesting geometry, no shortcut identified                     | ✅ Investigated      |
-| Bias-Based Key Recovery           | No significant exploitable bias detected                         | ❌ Closed            |
-| Index Calculus on Elliptic Curves | Works on small fields as expected                                | ✅ Verified          |
+| Hypothesis                     | Result                                      | Status         |
+| ------------------------------ | ------------------------------------------- | -------------- |
+| Echo-Polynomial Reduction      | No exploitable recursive structure detected | ❌ Falsified    |
+| Isogeny Walk Reduction         | Neighbor curves preserve DLP hardness       | ❌ Falsified    |
+| LFSR / Linear Recurrence Model | Keys exhibit CSPRNG characteristics         | ❌ Falsified    |
+| Coppersmith-Based Reduction    | Polynomial growth becomes impractical       | ❌ Falsified    |
+| Bias-Based Key Recovery        | No statistically significant bias found     | ❌ Falsified    |
+| Spectral Continuity            | Observable and reproducible phenomenon      | ✅ Verified     |
+| Graph-Theoretic ECC Structure  | Interesting geometry observed               | ✅ Investigated |
+| Index Calculus on ECC          | Successfully implemented on small fields    | ✅ Verified     |
 
 ---
 
 # 🔬 Index Calculus Implementation
 
-The repository contains a complete implementation of an Index Calculus attack against elliptic curves over finite fields.
+A complete experimental Index Calculus implementation is included.
 
-The workflow consists of:
+Pipeline:
 
-### 1. Factor Base Construction
+## 1. Factor Base Construction
 
-A factor base is generated from elliptic curve points satisfying predefined smoothness criteria.
+A factor base is generated from selected elliptic curve points satisfying smoothness criteria.
 
-### 2. Relation Collection
+## 2. Relation Collection
 
-Random linear combinations are generated:
+Random combinations are generated:
 
 R = aG + bQ
 
-Relations are accepted whenever the resulting point decomposes over the factor base.
+Relations are accepted whenever R decomposes over the factor base.
 
-### 3. Linear Algebra Phase
+## 3. Linear Algebra
 
-Collected relations form a modular linear system:
+Relations produce a modular linear system:
 
 Ax = b (mod N)
 
-which is solved using modular arithmetic and CRT decomposition.
+which is solved using CRT decomposition and modular elimination.
 
-### 4. Discrete Log Recovery
+## 4. Logarithm Recovery
 
-The recovered logarithms of factor-base points are combined to obtain the target secret.
+Recovered factor-base logarithms are combined to derive the target discrete logarithm.
 
 ---
 
@@ -135,19 +142,21 @@ Curve:
 
 y² = x³ + 7 (mod p)
 
-with
+where:
 
 p ≈ 2²⁵
 
-### Results
+### Benchmark Results
 
-* Factor base size: 63–238 points
-* Relations generated: 150,000+
-* Independent equations: 258+
-* Solve time: < 0.1 seconds
-* Verification success: 100%
+| Metric                | Value    |
+| --------------------- | -------- |
+| Factor Base Size      | 63–238   |
+| Relations Generated   | 150,000+ |
+| Independent Equations | 258+     |
+| Solve Time            | < 0.1 s  |
+| Verification Success  | 100%     |
 
-Recovered keys satisfy:
+Verification:
 
 kG = Q
 
@@ -157,35 +166,33 @@ for all tested instances.
 
 # 📈 Bitcoin Puzzle Analysis
 
-Extensive statistical analysis was performed on solved Bitcoin Puzzle keys.
-
-Datasets included:
+Datasets analyzed:
 
 * Puzzle #1–#130
-* Solved public keys
-* Private key intervals
-* Binary representations
+* Solved private keys
+* Public keys
+* Binary encodings
 * wNAF expansions
 
-### Findings
+## Findings
 
-#### Entropy
+### Entropy
 
-Keys behave consistently with cryptographically secure random generation.
+Observed entropy is consistent with cryptographically secure random generation.
 
-#### Correlations
+### Correlations
 
 No meaningful long-range correlations were detected.
 
-#### Linear Complexity
+### Linear Complexity
 
-Observed complexity approaches theoretical maximum:
+Measured complexity approaches:
 
 L ≈ N/2
 
 which is expected for secure pseudorandom sequences.
 
-#### Bias Detection
+### Bias Detection
 
 Only noise-level deviations were observed.
 
@@ -195,91 +202,157 @@ No statistically significant shortcut was identified.
 
 # 🌊 Spectral Continuity Research
 
-One of the major contributions of this repository is the investigation of spectral structures induced by elliptic curve arithmetic.
+One of the most interesting outcomes of this research is the observation of spectral continuity within elliptic curve groups.
 
-The experiments demonstrate that:
+Experimental results indicate:
 
-* Elliptic curve groups possess measurable spectral continuity.
-* Local neighborhoods exhibit smooth transitions.
-* Spectral embeddings preserve geometric information.
+* Smooth spectral transitions between neighboring scalar multiples
+* Stable spectral embeddings
+* Reproducible geometric structure
+* Consistent behavior across multiple curve sizes
 
 However:
 
-* No efficient inverse mapping from spectrum to private key was discovered.
-* No reduction of ECDLP complexity was achieved.
+* No efficient inversion procedure was discovered
+* No reduction in ECDLP complexity was achieved
+* No practical key-recovery mechanism emerged
 
-Therefore:
+Current conclusion:
 
-> Spectral continuity appears to be a genuine mathematical property of ECC groups, but not currently a practical attack vector.
+> Spectral continuity appears to be a genuine mathematical property of elliptic curve groups, but not currently a practical attack vector.
 
 ---
 
 # ⚠️ Why Index Calculus Does Not Scale to secp256k1
 
-Although Index Calculus works successfully on small fields, scaling remains infeasible.
+Although successful on small fields, Index Calculus remains impractical for cryptographic curves.
 
-For cryptographic curves such as secp256k1:
+For secp256k1:
 
 p ≈ 2²⁵⁶
 
-the required factor base becomes astronomically large.
-
 Approximate requirements:
 
-* Factor base size ≈ 2¹²⁸
-* Relation database ≈ 2¹²⁸
-* Storage beyond physical feasibility
+* Factor base ≈ 2¹²⁸ elements
+* Relation database ≈ 2¹²⁸ relations
+* Astronomical storage requirements
 
-As a result, generic algorithms remain dominant.
+Consequently:
+
+> Generic attacks remain significantly more practical than Index Calculus on standard elliptic curves.
 
 ---
 
-# 🚀 Recommended Practical Approaches
+# 🚀 Quick Start
 
-For real-world ECDLP instances:
+## Requirements
 
-### Pollard Kangaroo
+* Python 3.8+
+* No external dependencies
+* ~2 GB RAM recommended
 
-Advantages:
+## Clone Repository
 
-* O(√N) complexity
+```bash
+git clone https://github.com/Anvexis/Index-Calculus-on-Elliptic-Curves.git
+cd REPOSITORY
+```
+
+## Run Full Test Suite
+
+```bash
+python run_all_tests.py
+```
+
+## Run Individual Components
+
+```bash
+python test_ecc_core.py
+python test_index_calculus.py
+python test_hypotheses.py
+python test_puzzle_analysis.py
+```
+
+---
+
+# 📊 Test Modules
+
+| Module                  | Purpose                      | Runtime |
+| ----------------------- | ---------------------------- | ------- |
+| test_ecc_core.py        | ECC arithmetic validation    | <1 s    |
+| test_index_calculus.py  | Full Index Calculus pipeline | ~45 s   |
+| test_hypotheses.py      | Hypothesis validation        | <1 s    |
+| test_puzzle_analysis.py | Bitcoin Puzzle statistics    | <1 s    |
+
+---
+
+# ⚙️ Troubleshooting
+
+### Index Calculus Occasionally Fails
+
+Relation collection is probabilistic.
+
+If a run fails:
+
+```bash
+python test_index_calculus.py
+```
+
+again.
+
+Default success rate exceeds 95%.
+
+### Slow Execution
+
+The implementation prioritizes transparency and educational value over performance.
+
+---
+
+# 🚀 Practical ECDLP Algorithms
+
+For real-world cryptographic curves:
+
+## Pollard Kangaroo
+
+* O(√N)
 * Constant memory
-* Parallelizable
+* Highly parallelizable
 
-### Pollard Rho
+## Pollard Rho
 
-Advantages:
-
-* Low memory requirements
 * Proven generic attack
+* Low memory footprint
 
-### GLV Decomposition
+## GLV Decomposition
 
 Provides practical speedups on secp256k1 while preserving generic complexity.
 
 ---
 
-
-# 🔮 Future Research Directions
+# 🔮 Future Work
 
 * Parallel relation generation
 * GPU acceleration
-* CUDA-based Pollard Kangaroo
-* Spectral embeddings of ECC groups
-* Algebraic graph representations
-* Large-scale secp256k1 experimentation
-* Formal publication of results
+* CUDA-based Kangaroo implementation
+* Spectral embeddings of secp256k1
+* Advanced graph-theoretic analysis
+* Formal academic publication
+* Large-scale benchmark datasets
+
+---
 
 # 📜 Conclusions
 
-After extensive experimentation, the evidence supports the current cryptographic consensus:
+The experimental evidence collected throughout this project supports the current cryptographic consensus:
 
-* No hidden shortcut to ECDLP was discovered.
-* Bitcoin Puzzle keys exhibit behavior consistent with secure randomness.
+* No practical shortcut to ECDLP was discovered.
+* Bitcoin Puzzle keys behave consistently with secure randomness.
 * Index Calculus remains effective only on relatively small fields.
-* Spectral and structural properties exist but currently do not translate into practical attacks.
+* Spectral structures exist but currently provide no practical attack.
 
-The project nevertheless provides a valuable experimental framework for understanding why ECDLP remains hard and for exploring new mathematical directions.
+Nevertheless, the project offers a valuable research framework for exploring the mathematics underlying elliptic curve cryptography.
+
+---
 
 # 📄 License
 
@@ -293,14 +366,16 @@ This repository is intended for:
 
 Not intended for production cryptography or malicious use.
 
+---
+
 # 🙏 Acknowledgments
 
-Thanks to:
+Special thanks to:
 
-* The open-source cryptography community
-* Bitcoin Puzzle researchers
-* Contributors to ECC research
-* Everyone who helped test, debug, and challenge these ideas
+* Open-source cryptography researchers
+* Bitcoin Puzzle community
+* ECC researchers worldwide
+* Everyone who contributed ideas, testing, and critical review
 
 ---
 
