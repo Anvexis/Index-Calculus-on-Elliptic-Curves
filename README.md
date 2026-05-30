@@ -255,7 +255,7 @@ Consequently:
 
 ```bash
 git clone https://github.com/Anvexis/Index-Calculus-on-Elliptic-Curves.git
-cd REPOSITORY
+cd Index-Calculus-on-Elliptic-Curves
 ```
 
 ## Run Full Test Suite
